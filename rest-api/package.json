@@ -1,0 +1,65 @@
+{
+  "name": "supply-chain-server",
+  "version": "1.0.0",
+  "description": "Supply chain server",
+  "main": "index.js",
+  "scripts": {
+    "start": "DEBUG=app* node index.js",
+    "dev": "nodemon",
+    "migrate:offchain": "export DEBUG=app:offchain:migration && node fabric/couchdb/migration/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hyperledger/fabric-protos": "^0.1.6",
+    "ajv": "^6.12.3",
+    "ajv-errors": "^1.0.1",
+    "aws-sdk": "^2.768.0",
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "bull": "^4.0.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.0.0",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.2.0",
+    "express-promise-router": "^4.0.1",
+    "fabric-ca-client": "^2.2.2",
+    "fabric-common": "^2.2.17",
+    "fabric-network": "^2.2.2",
+    "helmet": "^3.23.3",
+    "image-hash": "^7.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "jsrsasign": "^10.7.0",
+    "lodash": "^4.17.19",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "mysql2": "^2.3.2",
+    "nodemon": "^2.0.4",
+    "object-hash": "^3.0.0",
+    "opencv.js": "^1.2.1",
+    "passport": "^0.4.1",
+    "passport-headerapikey": "^1.2.2",
+    "passport-jwt": "^4.0.0",
+    "sequelize": "^6.7.0",
+    "trim-request": "^1.0.6",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "sequelize-cli": "^6.2.0"
+  },
+  "nodemonConfig": {
+    "delay": "1500",
+    "restartable": "rs",
+    "env": {
+      "DEBUG": "app*"
+    }
+  }
+}

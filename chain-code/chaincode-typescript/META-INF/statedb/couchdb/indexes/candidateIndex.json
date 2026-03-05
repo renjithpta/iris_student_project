@@ -1,0 +1,12 @@
+{
+  "index": {
+    "fields": [
+      "docType",
+      "electionId",
+      "candidateId"
+    ]
+  },
+  "ddoc": "candidateIndexDoc",
+  "name": "candidateIndex",
+  "type": "json"
+}

@@ -1,0 +1,71 @@
+{
+    "name": "iris-network",
+    "version": "1.0.0",
+    "client": {
+        "tlsEnable": true,
+        "adminCredential": {
+            "id": "exploreradmin",
+            "password": "exploreradminpw"
+        },
+        "enableAuthentication": true,
+        "organization": "Org1MSP",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                },
+                "orderer": "300"
+            }
+        }
+    },
+  "channels": {
+    "irischannel": {
+        "peers": {
+            "peer0.org1.irisauth.com": {
+                "discover": true,
+                "endorsingPeer": true,
+                "chaincodeQuery": true,
+                "ledgerQuery": true,
+                "eventSource": true
+            }
+        },
+        "query-lifecycle": true        
+    }
+},
+
+    "organizations": {
+        "Org1MSP": {
+            "mspid": "Org1MSP",
+            "adminPrivateKey": {
+                "path": "/tmp/crypto/peerOrganizations/org1.irisauth.com/users/Admin@org1.irisauth.com/msp/keystore/priv_sk"
+            },
+            "signedCert": {
+                "path": "/tmp/crypto/peerOrganizations/org1.irisauth.com/users/Admin@org1.irisauth.com/msp/signcerts/cert.pem"
+            },
+            "peers": [
+                "peer0.org1.irisauth.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.org1.irisauth.com": {
+            "url": "grpcs://peer0.org1.irisauth.com:7051",
+            "tlsCACerts": {
+                "path": "/tmp/crypto/peerOrganizations/org1.irisauth.com/peers/peer0.org1.irisauth.com/tls/ca.crt"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.org1.irisauth.com",
+                "hostnameOverride": "peer0.org1.irisauth.com"
+            }
+        }
+    },
+    "entityMatchers": {
+        "peer": [
+            {
+                "pattern": "(\\w+).org1.irisauth.com:(\\d+)",
+                "urlSubstitutionExp": "grpcs://peer0.org1.irisauth.com:7051",
+                "sslTargetOverrideUrlSubstitutionExp": "peer0.org1.irisauth.com"
+            }
+        ]
+    }
+}

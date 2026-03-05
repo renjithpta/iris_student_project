@@ -1,0 +1,11 @@
+{
+  "index": {
+    "fields": [
+      "docType",
+      "isActive"
+    ]
+  },
+  "ddoc": "electionActiveIndexDoc",
+  "name": "electionActiveIndex",
+  "type": "json"
+}

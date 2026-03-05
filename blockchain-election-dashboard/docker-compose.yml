@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+
+  backend:
+    build: ./backend
+    container_name: election-backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+
+  frontend:
+    build: ./frontend
+    container_name: election-ui
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  postgres:
+    image: postgres:14
+    container_name: election-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: election
+    ports:
+      - "5432:5432"
