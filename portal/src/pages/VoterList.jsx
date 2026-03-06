@@ -70,7 +70,7 @@ export default function VoterList() {
             >
 
               <img
-                src={`http://145.239.29.94:4000/uploads/${v.voterId + "-"+v.imageName}`}
+                src={`http://localhost:4000/uploads/${v.voterId + "-"+v.imageName}`}
                 alt="voter"
                 className="h-40 w-full object-cover rounded-2xl mb-4"
               />

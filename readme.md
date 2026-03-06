@@ -1,8 +1,3 @@
-Below is a **professionally structured and beginner-friendly `README.md`**.
-It explains each step clearly so **even someone new to Hyperledger Fabric can follow it easily**.
-
----
-
 # 🚀 Digital Election System
 
 ### Hyperledger Fabric 2.5 + React Portal Setup Guide

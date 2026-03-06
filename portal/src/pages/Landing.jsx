@@ -73,7 +73,7 @@ export default function Landing() {
 
         {/* FOOTER */}
         <div className="absolute bottom-6 text-blue-300 text-sm">
-          © 2026 National Election Commission • Digital Voting System
+          © 2026 Student TOCH • Digital Voting System
         </div>
 
       </div>

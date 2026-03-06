@@ -16,7 +16,7 @@ useEffect(()=>{
    async function loadHistory(){
 alert("Loading historical transactions from backend...");
    const res = await axios.get(
-     "http://145.239.29.94:5000/api/transactions"
+     "http://localhost:5000/api/transactions"
    );
    setTotalVotes(res.data.length);
    setTxFeed(res.data.reverse());

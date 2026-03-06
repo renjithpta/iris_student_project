@@ -9,7 +9,7 @@ export default function TxFeed({ txFeed }) {
     try {
 
       const res = await fetch(
-        "http://145.239.29.94:5000/api/transaction/" + txId
+        "http://localhost:5000/api/transaction/" + txId
       );
 
 

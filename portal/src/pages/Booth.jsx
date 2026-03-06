@@ -249,7 +249,7 @@ const publicLogin = async (e) => {
     <div className="bg-white text-blue-900 p-8 rounded-3xl shadow-xl max-w-lg mx-auto">
 
       <img
-        src={`http://145.239.29.94:4000/uploads/${voter.voterId+'-'+voter.imageName}`}
+        src={`http://localhost:4000/uploads/${voter.voterId+'-'+voter.imageName}`}
         className="h-32 w-32 mx-auto rounded-full mb-6"
         alt=""
       />
@@ -306,7 +306,7 @@ const publicLogin = async (e) => {
                     `}
                   >
                     <img
-                      src={`http://145.239.29.94:4000/uploads/${c.imagePath}`}
+                      src={`http://localhost:4000/uploads/${c.imagePath}`}
                       className="h-40 w-full object-cover rounded-xl mb-4"
                       alt=""
                     />
