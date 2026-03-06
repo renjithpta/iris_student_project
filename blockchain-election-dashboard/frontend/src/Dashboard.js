@@ -5,6 +5,8 @@ import VoteChart from "./components/VoteChart";
 import TxFeed from "./components/TxFeed";
 import StatsPanel from "./components/StatsPanel";
 import axios from "axios";
+import BlockExplorer from "./components/BlockExplorer";
+import { useNavigate } from "react-router-dom";
 export default function Dashboard(){
 
  const [results,setResults] = useState({});
@@ -14,9 +16,9 @@ export default function Dashboard(){
 useEffect(()=>{
 
    async function loadHistory(){
-alert("Loading historical transactions from backend...");
+
    const res = await axios.get(
-     "http://localhost:5000/api/transactions"
+     "http://145.239.29.94:5000/api/transactions"
    );
    setTotalVotes(res.data.length);
    setTxFeed(res.data.reverse());

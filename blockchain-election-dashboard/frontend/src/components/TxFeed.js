@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 export default function TxFeed({ txFeed }) {
 
   const [selectedTx, setSelectedTx] = useState(null);
-
+  const navigate = useNavigate();
   const showDetails = async (txId) => {
 
     try {
 
       const res = await fetch(
-        "http://localhost:5000/api/transaction/" + txId
+        "http://145.239.29.94:5000/api/transaction/" + txId
       );
 
 
@@ -43,8 +43,11 @@ export default function TxFeed({ txFeed }) {
 
           {txFeed.map((tx, i) => (
             <tr key={i}>
+              <button
+  onClick={()=>navigate("/block/"+tx.blockNumber)}
+ >
               <td>{tx.blockNumber}</td>
-
+</button>
               <td>
                 <button onClick={() => showDetails(tx.txId)}>
                   {tx.txId.substring(0, 12)}...

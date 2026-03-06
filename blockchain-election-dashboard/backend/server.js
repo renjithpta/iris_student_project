@@ -9,6 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const txRoutes = require("./routes/transactions");
 const txDetailsRoute = require("./routes/transactionDetails");
+const blockDetails = require("./routes/blockDetails");
 
 
 
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use("/api/results",resultsRouter);
 app.use("/api/transactions",txRoutes);
 app.use("/api/transaction", txDetailsRoute);
+app.use("/api/block", blockDetails);
 listenFabricEvents(io);
 
 server.listen(5000,()=>{
