@@ -25,7 +25,7 @@ useEffect(()=>{
   const loadBlock = async () => {
 
     const res = await fetch(
-      "http://145.239.29.94:5000/api/block/" + inputBlockNumber
+      "http://localhost:5000/api/block/" + inputBlockNumber
     );
 
     const data = await res.json();
